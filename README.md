@@ -7,4 +7,7 @@
 4차 산업혁명의 주요 분야 중 하나인 미래자동차 분양의 자율주행차량의 특성을 이해하고,    
 ROS 프로그래밍을 학습하여 터틀봇을 활용한 자율주행 구현
 
+## ROS2
+The Construct 사이트 사용 (https://www.theconstructsim.com/) : 로봇 공학 및 ROS 교육 플랫폼 
+
 
