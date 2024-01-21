@@ -11,4 +11,6 @@ ROS 프로그래밍을 학습하여 터틀봇을 활용한 자율주행 구현
 ## ROS2
 The Construct 사이트 사용 ([The Construct Sim](https://www.theconstructsim.com/)) : 로봇 공학 및 ROS 교육 플랫폼 
 
+## 결과
+동상(RIS 트랙책임교수상)
 
