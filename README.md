@@ -1,5 +1,6 @@
 ## 2024년 DGM 미래 모빌리티 경진대회 
-![image](https://github.com/khw274/DGM-FM-2024/assets/125671828/12997c58-6fae-442f-a58c-fee7ebcd332c)  
+![image](https://github.com/khw274/DGM-FM-2024/assets/125671828/69fedcdf-da93-41ab-879f-fb309e0c88ba)
+ 
 ■ 공모 주제  
 영남대학교 미래차 융합전공 [B-1]전기차융합부품트랙 2024 DGM 미래 모빌리티 경진대회
 
