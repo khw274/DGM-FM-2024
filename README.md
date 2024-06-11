@@ -44,11 +44,11 @@ $ ifconfig  → ifconfig(현재 설정된 네트워크 인터페이스 상태) �
 - 접속한 turtlebot3 명령 창에서 turtlebot3 bringup(그 외 모든 명령은 PC에서 수행)
 
 
-[SLAM]
+[SLAM]  
 ● pc 명령창에서 slam 노드 실행  
 ● slam 노드 성공적으로 실행 시 원격 조작 노드를 실행시켜 지도를 탐색하고 빈틈 없이 그림 => map saver 노드를 실행해 지도 저장
 
-[NAVIGATION]
+[NAVIGATION]  
 ● 네비게이션 노드를 실행  
 ● 로봇의 초기 위치가 중요함, RVIZ 메뉴에서 2D Pose Estimate를 클릭하고 실제 로봇이 바라보는 방향으로 드래그, 실제 주변 사물과 동기화가 잘 됐는지 확인  
 ● RVIZ 메뉴에서 2D Nav Goal을 클릭해 목적지를 설정하고 녹색 화살표를 로봇이 향하는 방향으로 드래그 => 자동으로 turtlebot3가 목적지로 이동
