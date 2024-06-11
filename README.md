@@ -135,4 +135,4 @@ $ ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=$HOME/map.yaml
 1. 원격 PC의 RVIZ2의 메뉴에서 [Navigation2 Goal] button을 클릭
 2. 도착 위치를 클릭하고 도착 위치로부터 진행할 방향으로 드래그
 ```
-
+Turtlebot3가 목적지까지 주행을 시작함
