@@ -17,12 +17,12 @@ ROS 프로그래밍을 학습하여 터틀봇을 활용한 자율주행 구현
 
 #### SSH 통신
 - PC에서 노드와 노드 사이의 연결과 통신을 위한 서버를 실행하기 위해 ROS Master 실행(실행 명령어 roscore),  
-지정한 핫스팟의 ip로 ubuntu와 turtlebot3 간 ssh 통신
+지정한 핫스팟의 ip로 ubuntu와 turtlebot3 간 ssh 통신(고정 ip, wifi 설정 이용)
 ```
-$ cd /etc/netplan
+$ cd /etc/netplan  → netplan을 통하혀 ip 설정
 $ ls
 
-50-cloud-init.yaml
+50-cloud-init.yaml  → 해당 파일 수정
 
 $ sudo nano 50-cloud-init.yaml
 ----
@@ -31,15 +31,17 @@ $ sudo nano 50-cloud-init.yaml
         dhcp4: yes
         dhcp6: yes
         access-points:
-          JYSAH:
-            password: JYSAH1234
+              [네트워크 ID]:
+                    password: [네트워크 PASSWORD]
+
 [Ctri]x > Save=Y > [Enter]
 
 재부팅 : $ shutdown -h
 $ cd ~
-$ ifconfig 입력 후 wlan0 주소 확인
+$ ifconfig  → ifconfig(현재 설정된 네트워크 인터페이스 상태) 입력 후 wlan0 주소 확인, wlan0: 무선 네트워크 인터페이스
 ```
-- 연결된 turtlebot3 명령 창에서 turtlebot3 bringup(그 외 모든 명령은 PC에서 수행)
+- 확인한 무선 네트워크 인터페이스 wlan0의 주소를 사용해 ```ssh ubuntu@[ip주소]``` 명령어로 turtlebot3에 접속
+- 접속한 turtlebot3 명령 창에서 turtlebot3 bringup(그 외 모든 명령은 PC에서 수행)
 
 [활용]
 ROS2 Foxy, GAZEBO, RVIZ, Turtlebot3, UBUNTU 20.04
