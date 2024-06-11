@@ -60,12 +60,34 @@ ssh ubuntu@{IP_ADDRESS_OF_RASPBERRY_PI}
 
 ros2 launch turtlebot3_bringup robot.launch.py
 ```
-- ROS2를 사용하여 TurtleBot3 로봇을 시작, turtlebot3_bringup 패키지의 robot.launch.py 파일을 실행하여
+- 연결된 SBC 환경에서 ROS2를 사용하여 TurtleBot3 로봇을 시작, turtlebot3_bringup 패키지의 robot.launch.py 파일을 실행하여  
   TurtleBot3 로봇을 초기화하고 필요한 노드들을 실행
+
+##### 2) SLAM Node 실행
 - 원격 PC에서 새 터미널을 열고 SLAM 노드 실행
 ```
 export TURTLEBOT3_MODEL=burger  → Turtlebot3 burget 모델에 맞는 설정이 자동 적용
                                   (모델 종류: burger, waffle, waffle_pi, 해당 대회에서 burger 모델 사용)
 $ ros2 launch turtlebot3_bringup robot.launch.py
 ```
-- 
+
+##### 3) 원격조작 노드 실행
+SLAM 노드가 실행되면 Turtlebot3는 원격 조작을 해 지도의 알려지지 않은 영역을 탐색하여 지도를 그릴 수 있음  
+- 원격 PC에서 새 터미널을 열고 teleop_keyboard 노드 실행
+```
+$ export TURTLEBOT3_MODEL=burger
+$ ros2 run turtlebot3_teleop teleop_keyboard
+
+Control Your TurtleBot3!
+---------------------------
+Moving around:
+       w
+  a    s    d
+       x
+
+w/x : increase/decrease linear velocity
+a/d : increase/decrease angular velocity
+space key, s : force stop
+
+CTRL-C to quit
+```
