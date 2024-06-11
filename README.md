@@ -53,11 +53,18 @@ $ ifconfig  → ifconfig(현재 설정된 네트워크 인터페이스 상태) �
 - SLAM 방법 중 Cartographer 방법 사용
 
 ##### 1) Real World 실행
-- PC 명령창에서 Turtlebot3로 SSH 연결  
-```ssh ubuntu@{IP_ADDRESS_OF_RASPBERRY_PI}```
+- PC 명령창에서 SBC와 데스크탑(노트북) 간의 SSH 연결
+SBC: Single Board Computer, 해당 대회에서는 Turtlebot3에 내장된 RaspberryPi 4B가 사용됨
+```
+ssh ubuntu@{IP_ADDRESS_OF_RASPBERRY_PI}
+
+ros2 launch turtlebot3_bringup robot.launch.py
+```
+- ROS2를 사용하여 TurtleBot3 로봇을 시작, turtlebot3_bringup 패키지의 robot.launch.py 파일을 실행하여 TurtleBot3 로봇을 초기화하고 필요한 노드들을 실행
 - 원격 PC에서 새 터미널을 열고 SLAM 노드 실행
 ```
-export TURTLEBOT3_MODEL=burger  → Turtlebot3 burget 모델에 맞는 설정이 자동 적용(모델 종류: burger, waffle, waffle_pi, 해당 대회에서 burger 모델 사용)
+export TURTLEBOT3_MODEL=burger  → Turtlebot3 burget 모델에 맞는 설정이 자동 적용
+                                  (모델 종류: burger, waffle, waffle_pi, 해당 대회에서 burger 모델 사용)
 $ ros2 launch turtlebot3_bringup robot.launch.py
 ```
 - 
