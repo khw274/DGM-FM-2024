@@ -38,7 +38,8 @@ $ sudo nano 50-cloud-init.yaml
 
 재부팅 : $ shutdown -h
 $ cd ~
-$ ifconfig  → ifconfig(현재 설정된 네트워크 인터페이스 상태) 입력 후 wlan0 주소 확인, wlan0: 무선 네트워크 인터페이스
+$ ifconfig  → ifconfig(현재 설정된 네트워크 인터페이스 상태) 입력 후 wlan0 주소 확인,
+              wlan0: 무선 네트워크 인터페이스
 ```
 - 확인한 무선 네트워크 인터페이스 wlan0의 주소를 사용해 ```ssh ubuntu@[ip주소]``` 명령어로 turtlebot3에 접속
 - 접속한 turtlebot3 명령 창에서 turtlebot3 bringup(그 외 모든 명령은 PC에서 수행)
