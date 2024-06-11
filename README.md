@@ -91,3 +91,48 @@ space key, s : force stop
 
 CTRL-C to quit
 ```
+<img src="https://github.com/khw274/DGM-FM-2024/assets/125671828/3285b3db-962a-4d13-a633-d51b856b0d15" width="500" height="700"/>  
+실제 대회 맵 
+<img src="https://github.com/khw274/DGM-FM-2024/assets/125671828/4bd132eb-0b75-4f57-80dc-4c3e0814b8ab" width="700" height="400"/>  
+추출한 맵 파일
+
+##### 4) Map 저장
+- 원격 PC에서 명령어 실행
+```
+$ cd ~
+$ ros2 run nav2_map_server map_saver_cli -f ~/map1
+
+$ ls map1.*
+map1.pgm  map1.yaml
+```
+
+#### Navigation
+- 주어진 환경에서 로봇을 한 위치에서 지정된 목적지로 이동시키는 것
+- Navigation은 Map, 로봇의 인코더, IMU 센서, 거리 센서를 이용하여 로봇이 지도 상의 현재 자세에서 지정된 목표 자세로 이동할 수 있도록 해준다
+
+##### 1) Navigation Node 실행
+- bringup으로 Real World을 실행했다는 전제하에 원격 PC에서 Navigation Node 실행
+```
+$ export TURTLEBOT3_MODEL=burger
+$ ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=$HOME/map.yaml
+```
+
+##### 2) Initial Pose 설정(로봇의 초기 위치와 방향을 설정)
+- 로봇이 목표 지점으로 이동하기 위해 경로를 계획할 때 Initial Pose가 필요하다
+- TurtleBot3는 표시된 지도와 깔끔하게 겹치는 LDS 센서 데이터를 사용하여 지도에서 올바르게 위치해야 한다  
+- LDS 센서: "Laser Distance Sensor" 또는 "Laser Detection and Ranging", 레이저를 이용하여 물체와의 거리를 측정하는 센서  
+  레이저를 발사하고 반사된 레이저를 수신하여 물체와의 거리를 측정
+```
+1. 원격 PC의 RVIZ2의 메뉴에서 [2D Pose Estimate] button을 클릭
+2. 실제 Turtlebot3 로봇이 위치한 지도를 클릭하고 로봇이 바라보는 방향으로 드래그
+3. LDS 센서 데이터가 저장된 지도에 오버레이될 때까지 1단계와 2단계를 반복
+```
+![image](https://github.com/khw274/DGM-FM-2024/assets/125671828/154f1c59-d365-4e59-9904-e240618192db)
+예시 이미지(출처: https://emanual.robotis.com/docs/en/platform/turtlebot3/navigation/#navigation)
+
+##### 3) Navigation Goal 설정(로봇의 목적지 설정)
+```
+1. 원격 PC의 RVIZ2의 메뉴에서 [Navigation2 Goal] button을 클릭
+2. 도착 위치를 클릭하고 도착 위치로부터 진행할 방향으로 드래그
+```
+
