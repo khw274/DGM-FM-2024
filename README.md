@@ -44,13 +44,20 @@ $ ifconfig  → ifconfig(현재 설정된 네트워크 인터페이스 상태) �
 - 확인한 무선 네트워크 인터페이스 wlan0의 주소를 사용해 ```ssh ubuntu@[ip주소]``` 명령어로 turtlebot3에 접속
 - 접속한 turtlebot3 명령 창에서 turtlebot3 bringup(그 외 모든 명령은 PC에서 수행)
 
+### Turtlebot3 Real World 
+실제 TurtleBot3 로봇을 물리적 환경에서 사용
 
-[SLAM]  
-● pc 명령창에서 slam 노드 실행  
-● slam 노드 성공적으로 실행 시 원격 조작 노드를 실행시켜 지도를 탐색하고 빈틈 없이 그림 => map saver 노드를 실행해 지도 저장
 
-[NAVIGATION]  
-● 네비게이션 노드를 실행  
-● 로봇의 초기 위치가 중요함, RVIZ 메뉴에서 2D Pose Estimate를 클릭하고 실제 로봇이 바라보는 방향으로 드래그, 실제 주변 사물과 동기화가 잘 됐는지 확인  
-● RVIZ 메뉴에서 2D Nav Goal을 클릭해 목적지를 설정하고 녹색 화살표를 로봇이 향하는 방향으로 드래그 => 자동으로 turtlebot3가 목적지로 이동
+#### SLAM (Simultaneous Localization and Mapping)  
+- 주변 위치 정보로 부터 위치를 추정하고, 주변 환경에 대한 지도를 동시에 작성하는 기술
+- SLAM 방법 중 Cartographer 방법 사용
 
+##### 1) Real World 실행
+- PC 명령창에서 Turtlebot3로 SSH 연결  
+```ssh ubuntu@{IP_ADDRESS_OF_RASPBERRY_PI}```
+- 원격 PC에서 새 터미널을 열고 SLAM 노드 실행
+```
+export TURTLEBOT3_MODEL=burger  → Turtlebot3 burget 모델에 맞는 설정이 자동 적용(모델 종류: burger, waffle, waffle_pi, 해당 대회에서 burger 모델 사용)
+$ ros2 launch turtlebot3_bringup robot.launch.py
+```
+- 
