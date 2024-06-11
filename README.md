@@ -60,7 +60,8 @@ ssh ubuntu@{IP_ADDRESS_OF_RASPBERRY_PI}
 
 ros2 launch turtlebot3_bringup robot.launch.py
 ```
-- ROS2를 사용하여 TurtleBot3 로봇을 시작, turtlebot3_bringup 패키지의 robot.launch.py 파일을 실행하여 TurtleBot3 로봇을 초기화하고 필요한 노드들을 실행
+- ROS2를 사용하여 TurtleBot3 로봇을 시작, turtlebot3_bringup 패키지의 robot.launch.py 파일을 실행하여
+  TurtleBot3 로봇을 초기화하고 필요한 노드들을 실행
 - 원격 PC에서 새 터미널을 열고 SLAM 노드 실행
 ```
 export TURTLEBOT3_MODEL=burger  → Turtlebot3 burget 모델에 맞는 설정이 자동 적용
