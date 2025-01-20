@@ -90,7 +90,8 @@ space key, s : force stop
 
 CTRL-C to quit
 ```
-<img src="https://github.com/khw274/DGM-FM-2024/assets/125671828/3285b3db-962a-4d13-a633-d51b856b0d15" width="500" height="700"/>  
+<img src="https://github.com/khw274/DGM-FM-2024/assets/125671828/3285b3db-962a-4d13-a633-d51b856b0d15" width="500" height="700"/> 
+
 실제 대회 맵 
 <img src="https://github.com/khw274/DGM-FM-2024/assets/125671828/4bd132eb-0b75-4f57-80dc-4c3e0814b8ab" width="700" height="400"/>  
 추출한 맵 파일
